@@ -22,7 +22,6 @@ public class LruCache<K, V> extends LinkedHashMap<K, V> {
     }
 
     public int elements() {
-
         return size();
     }
 
