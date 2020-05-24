@@ -12,21 +12,21 @@ public class FirstUnique {
 
     public FirstUnique(int[] numbers) {
         counters = new LinkedHashMap<>();
-        for (int number : numbers) {
+        for (var number : numbers) {
             add(number);
         }
     }
 
     public int showFirstUnique() {
-        for(Map.Entry<Integer, Integer> item : counters.entrySet())
-            if(item.getValue() == 1)
+        for (Map.Entry<Integer, Integer> item : counters.entrySet())
+            if (item.getValue() == 1)
                 return item.getKey();
         return -1;
     }
 
     public void add(int value) {
-        if(counters.containsKey(value))
-            counters.replace(value, counters.get(value) + 1);
+        if (counters.containsKey(value))
+            counters.compute(value, (key, val) -> val + 1);
         else
             counters.put(value, 1);
     }

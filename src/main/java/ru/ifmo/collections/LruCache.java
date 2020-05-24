@@ -14,7 +14,7 @@ import java.util.LinkedHashMap;
  * Implementing this cache in (almost) the same manner as it was implemented during the lecture will result in extra points.
  */
 public class LruCache<K, V> extends LinkedHashMap<K, V> {
-    private int capacity;
+    private final int capacity;
 
     public LruCache(int capacity) {
         super(capacity, 1f, true);

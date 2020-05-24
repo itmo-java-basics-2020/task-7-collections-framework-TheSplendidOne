@@ -14,9 +14,9 @@ public class KthLargest {
     private Integer k;
 
     public KthLargest(int k, int[] numbers) {
-        this.k = --k;
+        this.k = k - 1;
         values = new ArrayList<>();
-        for(int number : numbers)
+        for(var number : numbers)
             values.add(number);
     }
 
